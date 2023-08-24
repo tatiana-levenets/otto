@@ -1,0 +1,108 @@
+@import '../helpers';
+
+.avantages {
+  display: none;
+  @include above-bg;
+
+  &__adv {
+    padding-top: 60px;
+    position: relative;
+    max-width: 23%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      background-image: url(../images/icons/gift_icon.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__adv + &__adv:before {
+    background-image: url(../images/icons/screens_icon.svg);
+  }
+  &__adv + &__adv + &__adv:before {
+    background-image: url(../images/icons/tv_icon.svg);
+  }
+  &__adv + &__adv + &__adv + &__adv:before {
+    background-image: url(../images/icons/earth_icon.svg);
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    padding-bottom: 1em;
+  }
+  
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.8;
+    line-height: 150%;
+  }
+
+  @media (min-width: $md) {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 41px;
+
+    &__text {
+      display: none;
+    }
+  }
+
+  @media (min-width: $lg) {
+    padding: 32px 0;
+    &__adv {
+      padding-top: 84px;
+
+      &:before {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    &__text {
+      display: block;
+    }
+  }
+
+  @media (min-width: $xl) {
+    padding-top: 48px;
+    padding-bottom: 56px;
+    &__adv {
+      padding-top: 96px;
+
+      &:before {
+        width: 72px;
+        height: 72px;
+      }
+    }
+    &__title {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: $xxl) {
+    &__adv {
+      padding-top: 128px;
+
+      &:before {
+        width: 96px;
+        height: 96px;
+      }
+    }
+    &__title {
+      font-size: 24px;
+    }
+    &__text {
+      font-size: 20px;
+    }
+  }
+}

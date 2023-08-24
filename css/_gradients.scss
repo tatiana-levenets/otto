@@ -1,0 +1,123 @@
+@import './helpers';
+
+.red-gradient {
+  background-image: $red_gradient;
+}
+.yellow-gradient {
+  background-image: $yellow_gradient;
+}
+.blue-gradient {
+  background-image: $blue_gradient;
+}
+.green-gradient {
+  background-image: $green_gradient;
+}
+.violet-gradient {
+  background-image: $violet_gradient;
+}
+
+.gradient_top {
+  background-image: url(../images/bg/gradient_top.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    height: 60%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/bg/bats_bg.png);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    height: 30%;
+    background-image: linear-gradient(#00000000, $black);
+  }
+}
+
+.gradient_medium {
+  background-image: url(../images/bg/gradient_medium.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 189px;
+    height: 353px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/bg/web.png);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    height: 30%;
+    background-image: linear-gradient(#00000000, $black);
+  }
+  @media (min-width: $sm) {
+    &:before {
+      width: 222px;
+      height: 413px;
+    }
+  }
+
+  @media (min-width: $md) {
+    &:before {
+      width: 290px;
+      height: 541px;
+    }
+  }
+
+  @media (min-width: $lg) {
+    &:before {
+      width: 415px;
+      height: 774px;
+    }
+  }
+
+  @media (min-width: $xl) {
+    &:before {
+      width: 495px;
+      height: 924px;
+    }
+  }
+
+  @media (min-width: $xxl) {
+    &:before {
+      width: 654px;
+      height: 1220px;
+    }
+  }
+}
+
+.gradient_bottom {
+  background-image: url(../images/bg/gradient_footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  @media (min-width: $md) {
+    &:after {
+      height: 6%;
+    }
+  }
+}

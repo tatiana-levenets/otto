@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700;800&display=swap');
+@import './reset.css';
+@import './helpers';
+@import './gradients';
+
+@import './elements/btn';
+@import './elements/descr';
+@import './elements/dual-content';
+@import './elements/link';
+@import './elements/title';
+
+@import './sections/avantages';
+@import './sections/channels';
+@import './sections/devices';
+@import './sections/faq';
+@import './sections/footer';
+@import './sections/header';
+@import './sections/platforms';
+@import './sections/prices';
+
+a {
+  text-decoration: none;
+  color: $white;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: $black;
+  font-family: 'Inter', sans-serif;
+  color: $white;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px;
+  max-width: 1096px;
+
+  @media (min-width: $xxl) {
+    max-width: 1462px;
+  }
+}
+
+.bg-img-bottom {
+  background-size: contain;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-image: url(../images/bg/footer-sm.svg);
+
+  @media (min-width: $md) {
+    background-position: center bottom;
+    background-image: url(../images/bg/footer.svg);
+  }
+}

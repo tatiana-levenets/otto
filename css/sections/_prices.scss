@@ -1,0 +1,202 @@
+@import '../helpers';
+
+.prices {
+  margin-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 33px;
+  @include above-bg;
+
+  &__input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid $gray_bg_input;
+    font-size: 17px;
+    opacity: 0.9;
+    color: rgba(60, 60, 67, 0.6);
+    margin-bottom: 16px;
+    &::placeholder {
+      color: rgba(60, 60, 67, 0.6);
+    }
+  }
+
+  &__container {
+    @include border($color: $red, $size: 2px);
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 32px 16px;
+
+    &:before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      top: -22px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%) rotate(45deg);
+      border-top: 2px solid $red;
+      border-bottom: 2px solid transparent;
+      border-left: 2px solid $red;
+      border-right: 2px solid transparent;
+      border-radius: 50%;
+      background-color: $black;
+    }
+    &:after {
+      content: '';
+      width: 35px;
+      height: 35px;
+      top: -15px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      background-image: url(../images/icons/eye.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__price-container {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &__price {
+    opacity: 0.8;
+    margin-bottom: 1em;
+  }
+
+  &__text {
+    opacity: 0.8;
+    margin-bottom: 1em;
+    line-height: 1.5;
+  }
+
+  &__number {
+    font-size: 67px;
+    font-weight: 600;
+    color: $red;
+  }
+
+  &__point {
+    margin-bottom: 1em;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding-left: 40px;
+    text-align: left;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/icons/checkbox_yellow.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__price-container {
+    padding-bottom: 16px;
+  }
+
+  @media (min-width: $sm) {
+    padding-top: 56px;
+    padding-bottom: 24px;
+  }
+
+  @media (min-width: $md) {
+    margin-bottom: 90px;
+    padding-top: 74px;
+    padding-bottom: 50px;
+
+    &__price-container {
+      padding-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__input {
+      margin-bottom: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    &__no-border_radius {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    &__btn-input-container {
+      display: flex;
+    }
+    &__container {
+      padding: 60px 24px 40px 24px;
+      &:before {
+        width: 80px;
+        height: 80px;
+        top: -42px;
+      }
+      &:after {
+        width: 70px;
+        height: 70px;
+        top: -30px;
+      }
+    }
+  }
+
+  @media (min-width: $lg) {
+    margin-bottom: 100px;
+    padding-top: 88px;
+    padding-bottom: 56px;
+    &__point {
+      margin-bottom: 18px;
+    }
+    &__price-container {
+      padding-bottom: 34px;
+    }
+    &__container {
+      padding: 66px 130px;
+      width: 800px;
+    }
+  }
+
+  @media (min-width: $xl) {
+    margin-bottom: 110px;
+    &__point {
+      margin-bottom: 20px;
+    }
+    &__container {
+      padding: 64px 143px;
+      width: 862px;
+    }
+  }
+
+  @media (min-width: $xxl) {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    &__point {
+      margin-bottom: 26px;
+    }
+    &__number {
+      font-size: 90px;
+    }
+    &__price-container {
+      padding-bottom: 44px;
+    }
+    &__container {
+      padding: 96px 226px;
+      width: 1150px;
+    }
+    &__price-container {
+      font-size: 20px;
+    }
+  }
+}

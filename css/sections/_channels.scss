@@ -1,0 +1,240 @@
+@import '../helpers';
+
+.channels {
+  margin-bottom: 34px;
+  @include above-bg;
+  &__title-container {
+    display: flex;
+    justify-content: center;
+  }
+  &__table {
+    margin-bottom: 20px;
+  }
+  &__title {
+    position: relative;
+    margin-bottom: 8px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      height: 40px;
+      width: 40px;
+      background-image: url(../images/icons/flash.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  &__text {
+    margin-bottom: 24px;
+  }
+  &__show-all {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    &-arrow {
+      margin-left: 5px;
+    }
+  }
+  &__tv-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__tv {
+    width: 31%;
+    height: 70px;
+    @include py(11px);
+    @include px(11px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid $gray_stroke;
+
+    &:nth-child(4),
+    &:last-child {
+      display: none;
+    }
+  }
+  &__logo {
+    @include wh-full;
+    object-fit: contain;
+  }
+  &__cat-list {
+    display: flex;
+    overflow-x: auto;
+    margin: 0 -16px 24px -16px;
+    padding-left: 16px;
+  }
+  &__cat {
+    transition: 0.3s;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    margin-right: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 16px;
+    }
+
+    &:hover,
+    &--active {
+      border: 2px solid $red;
+      background-color: $red;
+    }
+  }
+
+  @media (min-width: $sm) {
+    margin-bottom: 52px;
+    &__table {
+      margin-bottom: 20px;
+    }
+    &__title {
+      margin-bottom: 13px;
+    }
+    &__text {
+      margin-bottom: 32px;
+    }
+    &__cat {
+      margin-right: 16px;
+    }
+    &__tv {
+      width: 31%;
+      height: 70px;
+      @include py(14px);
+      @include px(14px);
+    }
+  }
+
+  @media (min-width: $md) {
+    margin-bottom: 58px;
+    &__table {
+      margin-bottom: 30px;
+    }
+    &__title-container {
+      justify-content: flex-start;
+    }
+    &__title {
+      margin-bottom: 16px;
+      &::before {
+        right: -56px;
+        top: -40px;
+        height: 48px;
+        width: 48px;
+      }
+    }
+    &__cat {
+      padding: 12px 18px;
+      font-weight: 400;
+      margin-right: 24px;
+    }
+    &__cat-list {
+      margin-bottom: 40px;
+    }
+    &__tv-row {
+      margin-bottom: 30px;
+    }
+    &__tv {
+      width: 23%;
+      height: 105px;
+      @include py(21px);
+      @include px(21px);
+
+      &:nth-child(4) {
+        display: block;
+      }
+    }
+  }
+
+  @media (min-width: $lg) {
+    margin-bottom: 82px;
+    &__title {
+      margin-bottom: 20px;
+    }
+    &__cat-list {
+      overflow-x: hidden;
+      flex-wrap: wrap;
+      margin-right: 0;
+    }
+    &__cat {
+      margin-bottom: 10px;
+      margin-right: 8px;
+      @include px(17px);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__tv {
+      width: 18.5%;
+      height: 108px;
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+
+  @media (min-width: $xl) {
+    margin-bottom: 107px;
+    &__text {
+      margin-bottom: 40px;
+    }
+    &__cat-list {
+      justify-content: space-between;
+    }
+    &__tv {
+      width: 180px;
+      height: 122px;
+      @include py(24px);
+      @include px(24px);
+    }
+  }
+
+  @media (min-width: $xxl) {
+    margin-bottom: 148px;
+    &__table {
+      font-size: 18px;
+    }
+    &__show-all-arrow {
+      width: 32px;
+      height: 32px;
+    }
+    &__cat {
+      padding: 16px 24px;
+      font-size: 20px;
+    }
+    &__title {
+      &::before {
+        right: -56px;
+        top: -40px;
+        height: 64px;
+        width: 50px;
+      }
+    }
+    &__tv-row {
+      margin-bottom: 50px;
+    }
+    &__tv {
+      width: 236px;
+      height: 162px;
+      @include py(32px);
+      @include px(32px);
+    }
+  }
+}

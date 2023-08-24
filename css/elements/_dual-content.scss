@@ -1,0 +1,103 @@
+@import '../helpers';
+
+.dual-content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  @include above-bg;
+
+  &__text {
+    margin-bottom: 24px;
+  }
+  &__img-mobile {
+    @include wh-full;
+  }
+  &__img {
+    display: none;
+  }
+  &__btn {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  @media (min-width: $sm) {
+    &__text {
+      margin-bottom: 32px;
+    }
+    &__btn {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+
+  @media (min-width: $md) {
+    margin-right: auto;
+    text-align: left;
+
+    &__left {
+      width: 60%;
+      flex-shrink: 0;
+    }
+    &__title {
+      margin-bottom: 24px;
+    }
+    &__text {
+      margin-bottom: 34px;
+    }
+    &__btn {
+      width: 85%;
+    }
+    &__img-mobile {
+      display: none;
+    }
+    &__img {
+      display: block;
+      width: 540px;
+    }
+  }
+
+  @media (min-width: $lg) {
+    &__title {
+      margin-bottom: 32px;
+    }
+    &__btn {
+      width: 68%;
+    }
+    &__text {
+      margin-bottom: 48px;
+    }
+    &__img {
+      width: 640px;
+    }
+  }
+
+  @media (min-width: $xl) {
+    &__left {
+      width: 47%;
+    }
+    &__text {
+      margin-bottom: 56px;
+    }
+    &__btn {
+      width: 80%;
+    }
+    &__img {
+      width: 740px;
+    }
+  }
+
+  @media (min-width: $xxl) {
+    &__title {
+      margin-bottom: 50px;
+    }
+    &__text {
+      margin-bottom: 70px;
+    }
+    &__btn {
+      font-size: 20px;
+    }
+    &__img {
+      width: 1006px;
+    }
+  }
+}

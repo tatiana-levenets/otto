@@ -1,0 +1,157 @@
+@import '../helpers';
+
+.footer {
+  @include above-bg;
+  font-size: 14px;
+  font-weight: 400;
+
+  &__cols {
+    @include above-bg;
+  }
+  &__payment {
+    position: relative;
+    z-index: 5;
+    padding: 32px 0 22px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__img-payment {
+    max-width: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  &__rights {
+    text-align: center;
+    position: relative;
+    z-index: 15;
+    padding: 20px 0;
+    font-size: 11px;
+    line-height: 140%;
+    opacity: 0.8;
+  }
+  &__dot {
+    display: none;
+  }
+  &__links-container {
+    &--mb {
+      margin-bottom: 32px;
+    }
+  }
+  &__media-item {
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+  &__links-item {
+    line-height: 140%;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 1;
+    margin-bottom: 18px;
+  }
+  &__links {
+    &--row {
+      display: flex;
+    }
+  }
+  &__contacts-left {
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: $sm) {
+    &__cols {
+      padding-bottom: 30px;
+    }
+    &__links-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__links {
+      &--restricted-width {
+        width: 156px;
+      }
+    }
+    &__img-payment {
+      margin-right: 2rem;
+    }
+    &__links-left {
+      margin-right: 20px;
+      padding-bottom: 30px;
+    }
+    &__contacts-left-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: $md) {
+    &__cols {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__contacts-col {
+      display: flex;
+      flex-direction: column;
+    }
+    &__contacts-left {
+      margin-bottom: 30px;
+    }
+    &__contacts-left-container {
+      flex-direction: column;
+    }
+    &__payment {
+      justify-content: flex-start;
+    }
+    &__rights {
+      display: flex;
+      justify-content: flex-end;
+    }
+    &__dot {
+      display: block;
+    }
+  }
+
+  @media (min-width: $lg) {
+    &__links-left {
+      margin-right: 110px;
+    }
+    &__item {
+      padding-top: 27px;
+      padding-bottom: 24px;
+    }
+  }
+
+  @media (min-width: $xl) {
+    &__cols {
+      padding-bottom: 50px;
+    }
+  }
+
+  @media (min-width: $xxl) {
+    &__links-item {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    &__media-item {
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+    &__links-left {
+      margin-right: 140px;
+    }
+    &__title {
+      font-size: 20px;
+    }
+    &__links {
+      &--restricted-width {
+        width: 217px;
+      }
+    }
+  }
+}

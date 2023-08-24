@@ -1,0 +1,80 @@
+@import '../helpers';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include py(8px);
+  margin-bottom: 16px;
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 56px;
+    height: 51px;
+  }
+
+  &__media-list {
+    display: none;
+    margin-right: 50px;
+
+    &-item {
+      margin-right: 18px;
+      opacity: 0.8;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__register {
+    opacity: 0.8;
+    display: none;
+    margin-right: 32px;
+  }
+
+  @media (min-width: $sm) {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: $md) {
+    @include py(23px);
+    margin-bottom: 0;
+
+    &__logo {
+      width: 64px;
+      height: 58px;
+    }
+    &__media-list {
+      display: flex;
+    }
+    &__register {
+      display: inline-block;
+    }
+  }
+
+  @media (min-width: $lg) {
+    &__logo {
+      width: 72px;
+      height: 65px;
+    }
+  }
+
+  @media (min-width: $xl) {
+  }
+
+  @media (min-width: $xxl) {
+    @include py(30px);
+    &__logo {
+      width: 96px;
+      height: 87px;
+    }
+    &__sign-in {
+      width: 127px;
+    }
+  }
+}

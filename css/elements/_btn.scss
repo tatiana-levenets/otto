@@ -1,0 +1,92 @@
+@import '../helpers';
+
+.btn {
+  transition: 0.4s;
+  border-radius: 5px;
+  text-align: center;
+  color: $white;
+  @include px(24px);
+
+  &--outlined {
+    font-size: 16px;
+    @include py(9px);
+    @include border;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  &--primary {
+    background-color: $red;
+    font-size: 15px;
+    @include border($red);
+    @include py(14px);
+    padding-left: 8px;
+    padding-right: 8px;
+
+    &--sm {
+      padding: 20px;
+      @include py(16px);
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  @media (min-width: $sm) {
+    &--primary {
+      font-size: 17px;
+      @include py(16px);
+
+      &--sm {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media (min-width: $md) {
+    &--outlined {
+      @include py(11px);
+    }
+
+    &--primary {
+      @include py(16px);
+    }
+  }
+
+  @media (min-width: $lg) {
+    &--primary {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: $xl) {
+    &--outlined {
+      font-size: 16px;
+    }
+
+    &--primary {
+      @include py(18px);
+      font-size: 20px;
+
+      &--sm {
+        padding: 16px 24px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  @media (min-width: $xxl) {
+    &--outlined {
+      @include py(16px);
+      font-size: 20px;
+    }
+    &--primary {
+      @include py(24px);
+      font-size: 26px;
+    }
+  }
+}
